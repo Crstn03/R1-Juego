@@ -6,12 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "check": "tsc --noEmit && next lint && prettier --check . && vitest run --coverage"
+    "check": "tsc --noEmit && eslint . && prettier --check . && vitest run --coverage"
   },
   "dependencies": {
     "next": "16.4.6",

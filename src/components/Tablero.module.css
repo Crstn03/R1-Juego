@@ -1,0 +1,27 @@
+/* Grid responsivo sin desbordamiento horizontal
+   Mobile-first: 4 columnas en 360 px.
+   El auto-fill amplía según el espacio disponible. */
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(60px, 10vw, 80px), 1fr));
+  gap: clamp(0.4rem, 1.5vw, 0.625rem);
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0.25rem;
+}
+
+/* En pantallas medianas limitamos las columnas para 12 cartas */
+@media (min-width: 480px) {
+  .tablero[data-total="12"] {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .tablero[data-total="16"] {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .tablero[data-total="24"] {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
